@@ -3,26 +3,27 @@ class Solution {
     {
         int max_len = 0;
 
-        for(int i = 0; i < nums.length; i++) 
+        for(int i=0;i<nums.length;i++)
         {
-            int count = 0;  // count zeros in current window
-
-            for(int j = i; j < nums.length; j++) 
+            int count=0;
+            
+            for(int j=i;j<nums.length;j++)
             {
-                if(nums[j] == 0) 
+                if(nums[j]==0)
                 {
-                    count++;
+                       count++;
                 }
-
-                if(count > k) 
+                if(count<=k)
                 {
-                    break; // invalid window → stop expanding
+                    max_len=Math.max(max_len,j-i+1);
                 }
-
-                max_len = Math.max(max_len, j - i + 1);
+                if(count>k)
+                {
+                    break;
+                }
             }
         }
-
         return max_len;
+
     }
 }
