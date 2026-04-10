@@ -7,8 +7,11 @@ class Solution {
        {
         cur_sum+=nums[i];
 
-        max_sum=Math.max(max_sum,cur_sum);
-
+       // max_sum=Math.max(max_sum,cur_sum);
+                if(cur_sum>max_sum)
+                {
+                    max_sum=cur_sum;
+                }
         if(cur_sum<0)
         {
             cur_sum=0;
